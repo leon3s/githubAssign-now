@@ -1,7 +1,12 @@
 const { standalone } = require('@leone/githubassign');
 
+console.log(process.env.SLACK_TOKEN);
+console.log(process.env.GITHUB_TOKEN);
+
 standalone({
-  port: process.env.PORT,
+  name: 'faste',
+  port: 1337,
+  webhookUrl: '/webhook/github',
   slackToken: process.env.SLACK_TOKEN,
   githubToken: process.env.GITHUB_TOKEN,
   reviewers: [{
